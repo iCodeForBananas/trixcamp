@@ -34,6 +34,8 @@ TrixCamp takes the title and contents of the trix editor and builds a JSON objec
 }
 ```
 
+It then writes this to a file of the user's choosing.  Right now I add `.trix` to the end of all the files for future developments.
+
 ## Todo
 
 - I have doubts the keyboard shortcuts work on windows, I don't own a computer like that
@@ -42,8 +44,8 @@ TrixCamp takes the title and contents of the trix editor and builds a JSON objec
 - Auto save every minute to five minutes
 - Unsaved indicator
 - Export to markdown
-- Remember files you've opened in a toggleable left hand menu
 - Be able to insert images
+- Remember files you've opened in a toggleable left hand menu (maybe)
 
 ## Why
 

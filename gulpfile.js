@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 gulp.task('styles', function() {
     return sass('src/browser/sass/app.scss', { style: 'expanded' })
         .pipe(autoprefixer('last 2 versions'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('src/browser/css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(cssnano())
         .pipe(gulp.dest('src/browser/css'))

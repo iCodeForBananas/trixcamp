@@ -19,6 +19,12 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 
 [Linux Download](https://s3.amazonaws.com/michaeljcalkins/TrixCamp-linux-x64.zip)
 
+## Developer's Guide
+
+1. Install all components: `npm install`
+2. Run electron: `electron .`
+3. Start editing!
+
 ## Todo
 
 - I have doubts the keyboard shortcuts work on windows, I don't own a computer like that
@@ -27,8 +33,6 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 - Auto save every minute to five minutes
 - Unsaved indicator
 
-## Developer's Guide
+This was part of an experiment I did in planning and delivering applications quickly and I feel this was a highly successful and useful proejct.
 
-1. Install all components: `npm install`
-2. Run electron: `electron .`
-3. Start editing!
+More on that here: http://michaeljcalkins.com/2016/02/10/planning-so-you-can-deliver/

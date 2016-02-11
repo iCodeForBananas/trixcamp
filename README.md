@@ -20,9 +20,15 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 [Linux Download](https://s3.amazonaws.com/michaeljcalkins/TrixCamp-linux-x64.zip)
 
 ## Todo
+
 - I have doubts the keyboard shortcuts work on windows, I don't own a computer like that
 - Editor bar should always be in view
 - Indent the ul and ol list via css a bit
 - Auto save every minute to five minutes
 - Unsaved indicator
 
+## Developer's Guide
+
+1. Install all components: `npm install`
+2. Run electron: `electron .`
+3. Start editing!

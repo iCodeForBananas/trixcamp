@@ -25,6 +25,15 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 2. Run electron: `electron .`
 3. Start editing!
 
+TrixCamp takes the title and contents of the trix editor and builds a JSON object that looks like:
+
+```
+{
+  "title": "Man In The Arena",
+  "contents": "It is not the critic who counts; not the man who points out how the strong man..."
+}
+```
+
 ## Todo
 
 - I have doubts the keyboard shortcuts work on windows, I don't own a computer like that
@@ -32,6 +41,11 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 - Indent the ul and ol list via css a bit
 - Auto save every minute to five minutes
 - Unsaved indicator
+- Export to markdown
+- Remember files you've opened in a toggleable left hand menu
+- Be able to insert images
+
+## Why
 
 This was part of an experiment I did in planning and delivering applications quickly and I feel this was a highly successful and useful proejct.
 

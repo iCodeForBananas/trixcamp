@@ -29,9 +29,19 @@
 <body>
     <article class="trix-editor-container">
         <form>
-            <textarea id="title-content" name="trix-name" class="mousetrap trix-document-title"></textarea>
-            <input id="trix-content" type="hidden" name="trix-content">
-            <trix-editor input="trix-content" class="mousetrap trix-content"></trix-editor>
+            <textarea 
+                id="title-content" 
+                name="trix-name" 
+                tabindex="1" 
+                class="mousetrap trix-document-title"></textarea>
+            <input 
+                id="trix-content" 
+                type="hidden" 
+                name="trix-content">
+            <trix-editor 
+                tabindex="2"
+                input="trix-content" 
+                class="mousetrap trix-content"></trix-editor>
         </form>
     </article>
 </body>

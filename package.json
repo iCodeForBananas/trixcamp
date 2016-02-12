@@ -1,6 +1,6 @@
 {
   "name": "TrixCamp",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "main": "src/main.js",
   "scripts": {
     "start": "electron ."

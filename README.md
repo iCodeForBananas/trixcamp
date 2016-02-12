@@ -38,9 +38,6 @@ It then writes this to a file of the user's choosing.  Right now I add `.trix` t
 
 ## Todo
 
-- I have doubts the keyboard shortcuts work on windows, I don't own a computer like that
-- Editor bar should always be in view
-- Indent the ul and ol list via css a bit
 - Auto save every minute to five minutes
 - Unsaved indicator
 - Export to markdown

@@ -63,4 +63,12 @@ trix-toolbar {
     line-height: 1.5;
     font-size: 17px;
     font-family: 'Helvetica Neue', helvetica, arial;
+
+    ul, ol {
+        margin-left: .67rem;
+    }
+}
+
+trix-toolbar {
+    background: white;
 }

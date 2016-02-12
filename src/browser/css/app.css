@@ -57,3 +57,10 @@ trix-toolbar .button_groups .button_group button {
   font-size: 17px;
   font-family: 'Helvetica Neue', helvetica, arial;
 }
+.trix-content ul, .trix-content ol {
+  margin-left: .67rem;
+}
+
+trix-toolbar {
+  background: white;
+}

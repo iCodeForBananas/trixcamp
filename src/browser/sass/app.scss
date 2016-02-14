@@ -28,6 +28,8 @@ trix-toolbar {
     height: 3.8rem;
     margin: 0 -6rem;
     padding: 0 6rem;
+    z-index: 1;
+    transition: padding .5s;
 
     & .button_groups .button_group button,
     & .button_groups .button_group {
@@ -56,6 +58,11 @@ trix-toolbar {
     }
 }
 
+trix-toolbar.sticky-trix-toolbar button_groups {
+    padding-top: 1px;
+}
+
+
 .trix-content {
     padding-top: 1rem;
     min-height: 50rem;
@@ -72,3 +79,4 @@ trix-toolbar {
 trix-toolbar {
     background: white;
 }
+

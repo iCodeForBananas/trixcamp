@@ -27,6 +27,8 @@ trix-toolbar {
   height: 3.8rem;
   margin: 0 -6rem;
   padding: 0 6rem;
+  z-index: 1;
+  transition: padding .5s;
 }
 trix-toolbar .button_groups .button_group button, trix-toolbar .button_groups .button_group {
   border: 0;
@@ -47,6 +49,10 @@ trix-toolbar .button_groups .button_group button {
   width: 3.6rem;
   padding: 0;
   border: 0;
+}
+
+trix-toolbar.sticky-trix-toolbar button_groups {
+  padding-top: 1px;
 }
 
 .trix-content {

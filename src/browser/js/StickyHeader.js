@@ -6,6 +6,7 @@ $(document).ready(function() {
     $(window).scroll(function(){
         if ($(window).scrollTop() > stickyRibbonTop) {
             $('trix-toolbar').css({
+                borderTopWidth: 0,
                 position: 'fixed', 
                 top: '0px',
                 width: '100%',
@@ -13,6 +14,7 @@ $(document).ready(function() {
             })
         } else {
             $('trix-toolbar').css({
+                borderTopWidth: '1px',
                 position: 'static', 
                 top: '0px',
                 width: 'auto',

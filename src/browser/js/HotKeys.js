@@ -1,5 +1,7 @@
 'use strict'
 
+let FileHandler = require('./FileHandler')
+
 let currentFilename = false
 
 // New File

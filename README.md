@@ -13,11 +13,11 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 
 ## Downloads
 
-[Mac Download](https://s3.amazonaws.com/michaeljcalkins/TrixCamp-darwin-x64.zip)
+[Mac Download](http://bit.ly/1KhZbgq)
 
-[Windows Download](https://s3.amazonaws.com/michaeljcalkins/TrixCamp-win32-x64.zip)
+[Windows Download](http://bit.ly/20w3p6e)
 
-[Linux Download](https://s3.amazonaws.com/michaeljcalkins/TrixCamp-linux-x64.zip)
+[Linux Download](http://bit.ly/1KOiDBp)
 
 ## Developer's Guide
 

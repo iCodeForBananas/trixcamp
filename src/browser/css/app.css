@@ -55,6 +55,15 @@ trix-toolbar.sticky-trix-toolbar button_groups {
   padding-top: 1px;
 }
 
+.unsaved-indicator {
+  color: #F96058;
+  position: fixed;
+  top: 3px;
+  right: 15px;
+  z-index: 3;
+  font-size: 30px;
+}
+
 .trix-content {
   padding-top: 1rem;
   min-height: 50rem;

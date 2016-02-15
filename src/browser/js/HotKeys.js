@@ -1,11 +1,13 @@
 'use strict'
 
-let FileHandler = require('./FileHandler')
+let FileHandler = require('./FileHandler'),
+    base64ToBlob = require('./Base64ToBlob.js')
 
 let currentFilename = false
 
 // New File
 Mousetrap.bind('command+n', (e) => {
+    imageBlobs = {}
     currentFilename = false
     document.getElementById('title-content').value = ''
     document.querySelector("trix-editor").value = ''
@@ -19,12 +21,16 @@ Mousetrap.bind('command+s', (e) => {
     let title = document.getElementById('title-content').value
     let fileContents = JSON.stringify({
         contents,
-        title
+        title,
+        imageBlobs
     })
 
     if (currentFilename) {
         console.log('Saving to:', currentFilename)
         FileHandler.saveFile(currentFilename, fileContents)
+
+         $('.unsaved-indicator').remove()
+        isDirty = false 
         return
     }
 
@@ -38,13 +44,16 @@ Mousetrap.bind('command+s', (e) => {
 
         currentFilename = filename
         FileHandler.saveFile(currentFilename, fileContents)
+
+        $('.unsaved-indicator').remove()
+        isDirty = false 
     })
 })
 
 // Open file
 Mousetrap.bind('command+o', (e) => {
     FileHandler.showOpenDialog((data) => {
-        if (!data[0]) {
+        if (!data || !data[0]) {
             console.log('Canceling open...')
             return
         }
@@ -57,6 +66,24 @@ Mousetrap.bind('command+o', (e) => {
 
         // Resize the title textarea after setting the value
         $('#title-content').val(fileContents.title).trigger('input')
-        document.querySelector("trix-editor").value = fileContents.contents
+        imageBlobs = fileContents.imageBlobs || {}
+        let initialContents = fileContents.contents
+
+        // Convert old blob urls to new ones
+        let imageBlobsCopy = JSON.parse(JSON.stringify(imageBlobs))
+        for (var key in imageBlobsCopy) {
+            let blob = base64ToBlob(imageBlobsCopy[key].base64Image, imageBlobsCopy[key].contentType)
+            let blobUrl = URL.createObjectURL(blob)
+
+            initialContents = initialContents.replace(key, blobUrl)
+            imageBlobs[blobUrl] = imageBlobs[key]
+            delete imageBlobs[key]
+        }
+        imageBlobsCopy = null
+
+        document.querySelector("trix-editor").value = initialContents
+
+        $('.unsaved-indicator').remove()
+        isDirty = false
     })
 })

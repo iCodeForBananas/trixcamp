@@ -74,13 +74,21 @@ Mousetrap.bind('command+o', (e) => {
         // blobUrl keys with new ones.
         let imageBlobsCopy = JSON.parse(JSON.stringify(imageBlobs))
         for (var key in imageBlobsCopy) {
+            console.log('key', key)
+
             // Recreate the blob from the base64 image data
+            console.log('Recreating blobUrl key:', key)
             let blob = base64ToBlob(imageBlobsCopy[key].base64Image, imageBlobsCopy[key].contentType)
             let blobUrl = URL.createObjectURL(blob)
 
             // Copy the old blobUrl data with the new blobUrl
-            initialContents = initialContents.replace(key, blobUrl)
-            imageBlobs[blobUrl] = imageBlobs[key]
+            if (initialContents.match(key) !== null) {
+                console.log('Replacing with:', blobUrl)
+                initialContents = initialContents.split(key).join(blobUrl)
+                imageBlobs[blobUrl] = imageBlobs[key]
+            } else {
+                console.log('Was not found and is being removed:', key)
+            }
             
             // Remove the old blobUrl data
             delete imageBlobs[key]

@@ -1,14 +1,11 @@
 var gulp = require('gulp'),
-    run = require('gulp-run'),
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache')
+    notify = require('gulp-notify')
 
 gulp.task('styles', function() {
     return sass('src/browser/sass/app.scss', { style: 'expanded' })

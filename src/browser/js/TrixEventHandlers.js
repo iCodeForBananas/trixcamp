@@ -23,8 +23,6 @@ document.addEventListener('trix-attachment-add', (event) => {
     let blob = base64ToBlob(base64Image, contentType);
     let blobUrl = URL.createObjectURL(blob);
 
-    isDirty = true
-
     imageBlobs[blobUrl] = {
         base64Image: base64Image,
         contentType: contentType
@@ -41,5 +39,7 @@ document.addEventListener('trix-attachment-add', (event) => {
     // trix editor does this weird preload src url with a blob instead of this value
     let contents = document.getElementById('trix-content').value
     document.querySelector("trix-editor").value = contents
-    console.log(contents)
+    
+    $('body').append('<div class="unsaved-indicator">*</div>')
+    isDirty = true
 })

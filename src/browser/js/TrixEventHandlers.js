@@ -1,13 +1,13 @@
 'use strict'
 
 let fs = require('fs'),
-    base64ToBlob = require('./Base64ToBlob.js')
+    base64ToBlob = require('./Base64ToBlob'),
+    DirtyStatus = require('./DirtyStatus')
 
 document.addEventListener('trix-change', (event) => {
     if (isDirty) return
-    $('.unsaved-indicator').remove()
-    $('body').append('<div class="unsaved-indicator">*</div>')
-    isDirty = true
+    
+    DirtyStatus.isDirty()
 })
 
 document.addEventListener('trix-attachment-add', (event) => {
@@ -19,27 +19,25 @@ document.addEventListener('trix-attachment-add', (event) => {
     let imageData = fs.readFileSync(event.attachment.file.path)
     let base64Image = new Buffer(imageData, 'binary').toString('base64')
 
-
+    // Create the new blob
     let blob = base64ToBlob(base64Image, contentType);
     let blobUrl = URL.createObjectURL(blob);
 
+    // Add the new blob to the file contents
     imageBlobs[blobUrl] = {
         base64Image: base64Image,
         contentType: contentType
     }
 
-    console.log(blobUrl)
-
     // Tell trix editor about our newly added image
     event.attachment.setAttributes({
-        url: blobUrl
-        // href: base64Url + base64Image
+        url: blobUrl,
+        href: blobUrl
     })
 
     // trix editor does this weird preload src url with a blob instead of this value
     let contents = document.getElementById('trix-content').value
     document.querySelector("trix-editor").value = contents
     
-    $('body').append('<div class="unsaved-indicator">*</div>')
-    isDirty = true
+    DirtyStatus.isDirty()
 })

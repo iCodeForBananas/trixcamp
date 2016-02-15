@@ -1,7 +1,8 @@
 'use strict'
 
 let FileHandler = require('./FileHandler'),
-    base64ToBlob = require('./Base64ToBlob.js')
+    base64ToBlob = require('./Base64ToBlob'),
+    DirtyStatus = require('./DirtyStatus')
 
 let currentFilename = false
 
@@ -45,8 +46,7 @@ Mousetrap.bind('command+s', (e) => {
         currentFilename = filename
         FileHandler.saveFile(currentFilename, fileContents)
 
-        $('.unsaved-indicator').remove()
-        isDirty = false 
+        DirtyStatus.isClean()
     })
 })
 
@@ -89,7 +89,6 @@ Mousetrap.bind('command+o', (e) => {
 
         document.querySelector("trix-editor").value = initialContents
 
-        $('.unsaved-indicator').remove()
-        isDirty = false
+        DirtyStatus.isClean()
     })
 })

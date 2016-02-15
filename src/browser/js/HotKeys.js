@@ -74,8 +74,6 @@ Mousetrap.bind('command+o', (e) => {
         // blobUrl keys with new ones.
         let imageBlobsCopy = JSON.parse(JSON.stringify(imageBlobs))
         for (var key in imageBlobsCopy) {
-            console.log('key', key)
-
             // Recreate the blob from the base64 image data
             console.log('Recreating blobUrl key:', key)
             let blob = base64ToBlob(imageBlobsCopy[key].base64Image, imageBlobsCopy[key].contentType)

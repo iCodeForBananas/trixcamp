@@ -2,8 +2,17 @@
   font-family: 'Varela Round';
   src: url(../fonts/VarelaRound-Regular.ttf);
 }
+body, html {
+  font-family: 'Helvetica Neue', helvetica, arial;
+  -webkit-font-smoothing: antialiased;
+}
+
+article {
+  margin-left: 320px;
+}
+
 .trix-editor-container {
-  padding: 5rem 6rem 6rem;
+  padding: 5rem 20px 6rem;
 }
 
 .trix-document-title {
@@ -24,7 +33,7 @@
 trix-toolbar {
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
-  height: 3.8rem;
+  height: 38px;
   margin: 0 -6rem;
   padding: 0 6rem;
   z-index: 1;
@@ -78,4 +87,54 @@ trix-toolbar.sticky-trix-toolbar button_groups {
 
 trix-toolbar {
   background: white;
+}
+
+.sidebar {
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  width: 320px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 36px;
+  background: white;
+}
+.sidebar .sidebar-item:first-child {
+  border-top: 1px solid #e5e5e5;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  float: left;
+  clear: both;
+  border-bottom: 1px solid #e5e5e5;
+}
+.sidebar-item.active, .sidebar-item:hover {
+  background: rgba(221, 221, 221, 0.17);
+}
+
+.sidebar-item-title {
+  color: #444;
+  font-size: 14px;
+  margin: 0 0 3px;
+}
+
+.sidebar-item-body {
+  color: #666;
+  font-size: 12px;
+  height: 40px;
+  overflow: hidden;
+  line-height: 18px;
+  margin: 0;
+}
+
+.sidebar-no-files {
+  font-size: 18px;
+  color: #ddd;
+  text-align: center;
+  padding: 60px 0;
+  font-weight: bold;
+  width: 100%;
 }

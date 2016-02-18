@@ -3,8 +3,17 @@
     src: url(../fonts/VarelaRound-Regular.ttf);
 }
 
+body, html {
+    font-family: 'Helvetica Neue', helvetica, arial;
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    margin-left: 320px;
+}
+
 .trix-editor-container {
-    padding: 5rem 6rem 6rem;
+    padding: 5rem 20px 6rem;
 }
 
 .trix-document-title {
@@ -25,7 +34,7 @@
 trix-toolbar {
     border-top: 1px solid rgb(229, 229, 229);
     border-bottom: 1px solid rgb(229, 229, 229);
-    height: 3.8rem;
+    height: 38px;
     margin: 0 -6rem;
     padding: 0 6rem;
     z-index: 1;
@@ -88,3 +97,4 @@ trix-toolbar {
     background: white;
 }
 
+@import 'modules/sidebar';

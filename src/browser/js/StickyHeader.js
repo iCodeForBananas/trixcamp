@@ -8,19 +8,19 @@ $(document).ready(function() {
             $('trix-toolbar').addClass('sticky-trix-toolbar')
             $('trix-toolbar').css({
                 borderTopWidth: 0,
-                position: 'fixed', 
+                position: 'fixed',
+                height: '37px',
                 top: '0px',
-                width: '100%',
-                padding: '0 6rem 0 8rem'
+                width: '100%'
             })
         } else {
             $('trix-toolbar').removeClass('sticky-trix-toolbar')
             $('trix-toolbar').css({
                 borderTopWidth: '1px',
-                position: 'static', 
+                position: 'static',
+                height: '38px',
                 top: '0px',
-                width: 'auto',
-                padding: '0 6rem'
+                width: 'auto'
             })
         }
     })

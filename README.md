@@ -21,9 +21,15 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 
 ## Developer's Guide
 
+**Working with the code:**
+
 1. Install all components: `npm install`
 2. Run electron: `electron .`
 3. Start editing!
+
+**Packaging for distribution:**
+
+Mac: `electron-packager ./ TrixCamp --platform=darwin --arch=x64 --version=0.36.7 --overwrite`
 
 TrixCamp takes the title and contents of the trix editor and builds a JSON object that looks like:
 

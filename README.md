@@ -48,14 +48,6 @@ TrixCamp takes the title and contents of the trix editor and builds a JSON objec
 
 It then writes this to a file of the user's choosing.  Right now I add `.trix` to the end of all the files for future developments.
 
-## Todo
-
-- Auto save every minute to five minutes
-- Unsaved indicator
-- Export to markdown
-- Be able to insert images
-- Remember files you've opened in a toggleable left hand menu (maybe)
-
 ## Why
 
 This was part of an experiment I did in planning and delivering applications quickly and I feel this was a highly successful and useful proejct.

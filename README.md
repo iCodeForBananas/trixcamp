@@ -57,3 +57,5 @@ It then writes this to a file of the user's choosing.  Right now I add `.trix` t
 This was part of an experiment I did in planning and delivering applications quickly and I feel this was a highly successful and useful proejct.
 
 More on that here: http://michaeljcalkins.com/2016/02/10/planning-so-you-can-deliver/
+
+For updates follow: https://twitter.com/michaeljcalkins

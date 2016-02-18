@@ -30,8 +30,12 @@ Simple, distraction free writing app based on [Basecamp's trix-editor](https://g
 **Packaging for distribution:**
 
 Mac: `electron-packager ./ TrixCamp --platform=darwin --arch=x64 --version=0.36.7 --overwrite`
+
 Windows: `electron-packager ./ TrixCamp --platform=win32 --arch=x64 --version=0.36.7 --overwrite`
+
 Linux: `electron-packager ./ TrixCamp --platform=linux --arch=x64 --version=0.36.7 --overwrite`
+
+**.trix files**
 
 TrixCamp takes the title and contents of the trix editor and builds a JSON object that looks like:
 

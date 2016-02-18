@@ -1,7 +1,7 @@
 # TrixCamp
 Simple, distraction free writing app based on [Basecamp's trix-editor](https://github.com/basecamp/trix).
 
-<img src="https://raw.githubusercontent.com/michaeljcalkins/trixcamp/master/src/browser/img/screenshot.png" height="400">
+<img src="https://s3.amazonaws.com/michaeljcalkins/screenshot.png" height="500">
 
 ## Getting Started
 

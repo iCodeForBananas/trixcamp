@@ -7,16 +7,29 @@ let FileHandler = require('./FileHandler'),
 let DocumentHandler = {}
 let currentFilename = false
 let openFiles = []
+let saveHandle = null
+let saveDelay = 1000
 
-DocumentHandler.startSidebarItemListener = function() {
-    $('.sidebar').on('click', '.sidebar-item', function(evt) {
-        let $this = $(this)
-        DocumentHandler.save()
-        DocumentHandler.loadFile($this.data('filename'))
-    })
+DocumentHandler.setCurrentFilename = function(newValue) {
+    currentFilename = newValue
 }
 
- DocumentHandler.loadFile = function(filename) {
+DocumentHandler.hasCurrentFile = function() {
+    return currentFilename !== false
+}
+
+DocumentHandler.clearSavehandle = function() {
+    clearTimeout(saveHandle)
+}
+
+DocumentHandler.delaySave = function() {
+    DocumentHandler.clearSavehandle()
+    saveHandle = setTimeout(function() {
+        DocumentHandler.save()
+    }, saveDelay)
+}
+
+DocumentHandler.loadFile = function(filename) {
     currentFilename = filename
     let fileContents = FileHandler.openFile(filename)
     fileContents = eval('(' + fileContents.toString() + ')')
@@ -63,7 +76,6 @@ DocumentHandler.startSidebarItemListener = function() {
             <p class="sidebar-item-body">${previewContents}</p>
         </div>
         `)
-        DocumentHandler.startSidebarItemListener()
         openFiles.push(filename)
     } else {
         $(`[data-filename="${filename}"`).addClass('active')

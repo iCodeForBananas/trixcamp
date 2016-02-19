@@ -2,12 +2,34 @@
 
 let fs = require('fs'),
     base64ToBlob = require('./Base64ToBlob'),
-    DirtyStatus = require('./DirtyStatus')
+    DirtyStatus = require('./DirtyStatus'),
+    DocumentHandler = require('./DocumentHandler')
 
-document.addEventListener('trix-change', (event) => {
-    if (isDirty) return
-    
-    DirtyStatus.isDirty()
+$(document).ready(function() {
+    $('#title-content').on('input keyup', () => {
+        if (DocumentHandler.hasCurrentFile())
+            DocumentHandler.delaySave()
+
+        if (!isDirty)
+            DirtyStatus.isDirty()
+    })
+
+    $('.sidebar').on('click', '.sidebar-item', function(evt) {
+        if (isDirty && !confirm("You are going to lose your unsaved work, is that ok?"))
+            return
+
+        let $this = $(this)
+        DocumentHandler.save()
+        DocumentHandler.loadFile($this.data('filename'))
+    })
+})
+
+document.addEventListener('trix-change', () => {
+    if (DocumentHandler.hasCurrentFile())
+        DocumentHandler.delaySave()
+
+    if (!isDirty)
+        DirtyStatus.isDirty()
 })
 
 document.addEventListener('trix-attachment-add', (event) => {
@@ -38,6 +60,6 @@ document.addEventListener('trix-attachment-add', (event) => {
     // trix editor does this weird preload src url with a blob instead of this value
     let contents = document.getElementById('trix-content').value
     document.querySelector("trix-editor").value = contents
-    
+
     DirtyStatus.isDirty()
 })

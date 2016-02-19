@@ -13,7 +13,7 @@ article {
 }
 
 .trix-editor-container {
-    padding: 5rem 20px 6rem;
+    padding: 3rem 20px 6rem;
 }
 
 .trix-document-title {
@@ -38,7 +38,6 @@ trix-toolbar {
     margin: 0 -6rem;
     padding: 0 6rem;
     z-index: 1;
-    transition: padding .5s;
 
     & .button_groups .button_group button,
     & .button_groups .button_group {
@@ -49,8 +48,8 @@ trix-toolbar {
         border-right: 1px solid rgb(229, 229, 229);
     }
 
-    & .button_groups .button_group.history_tools {
-        float: right;
+    & .button_groups .button_group.block_tools {
+        border-right: 1px solid rgb(229, 229, 229);
     }
 
     & .button_groups .button_group {
@@ -81,7 +80,7 @@ trix-toolbar.sticky-trix-toolbar button_groups {
 }
 
 .trix-content {
-    padding-top: 1rem;
+    padding-top: 2rem;
     min-height: 50rem;
     border: 0;
     line-height: 1.5;

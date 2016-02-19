@@ -12,7 +12,7 @@ article {
 }
 
 .trix-editor-container {
-  padding: 5rem 20px 6rem;
+  padding: 3rem 20px 6rem;
 }
 
 .trix-document-title {
@@ -37,7 +37,6 @@ trix-toolbar {
   margin: 0 -6rem;
   padding: 0 6rem;
   z-index: 1;
-  transition: padding .5s;
 }
 trix-toolbar .button_groups .button_group button, trix-toolbar .button_groups .button_group {
   border: 0;
@@ -45,8 +44,8 @@ trix-toolbar .button_groups .button_group button, trix-toolbar .button_groups .b
 trix-toolbar .button_groups .button_group.text_tools {
   border-right: 1px solid #e5e5e5;
 }
-trix-toolbar .button_groups .button_group.history_tools {
-  float: right;
+trix-toolbar .button_groups .button_group.block_tools {
+  border-right: 1px solid #e5e5e5;
 }
 trix-toolbar .button_groups .button_group {
   margin: 0;
@@ -74,7 +73,7 @@ trix-toolbar.sticky-trix-toolbar button_groups {
 }
 
 .trix-content {
-  padding-top: 1rem;
+  padding-top: 2rem;
   min-height: 50rem;
   border: 0;
   line-height: 1.5;

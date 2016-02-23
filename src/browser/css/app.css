@@ -8,7 +8,7 @@ body, html {
 }
 
 article {
-  margin-left: 320px;
+  margin-left: 240px;
 }
 
 .trix-editor-container {
@@ -34,8 +34,9 @@ trix-toolbar {
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
   height: 38px;
-  margin: 0 -6rem;
-  padding: 0 6rem;
+  min-width: 395px;
+  margin: 0 -20px;
+  padding: 0 15px;
   z-index: 1;
 }
 trix-toolbar .button_groups .button_group button, trix-toolbar .button_groups .button_group {
@@ -44,8 +45,8 @@ trix-toolbar .button_groups .button_group button, trix-toolbar .button_groups .b
 trix-toolbar .button_groups .button_group.text_tools {
   border-right: 1px solid #e5e5e5;
 }
-trix-toolbar .button_groups .button_group.block_tools {
-  border-right: 1px solid #e5e5e5;
+trix-toolbar .button_groups .button_group.history_tools {
+  float: right;
 }
 trix-toolbar .button_groups .button_group {
   margin: 0;
@@ -88,10 +89,15 @@ trix-toolbar {
   background: white;
 }
 
+@media (max-width: 727px) {
+  .button_groups .button_group.history_tools {
+    display: none;
+  }
+}
 .sidebar {
   border-right: 1px solid #e5e5e5;
   position: fixed;
-  width: 320px;
+  width: 240px;
   top: 0;
   bottom: 0;
   left: 0;
@@ -117,7 +123,7 @@ trix-toolbar {
 .sidebar-item-title {
   color: #444;
   font-size: 14px;
-  margin: 0 0 3px;
+  margin: 0 0 4px;
 }
 
 .sidebar-item-body {

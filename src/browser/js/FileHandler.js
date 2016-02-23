@@ -15,8 +15,11 @@ FileHandler.showOpenDialog = (cb) => {
     })
 }
 
-FileHandler.showSaveDialog = (cb) => {
-    return dialog.showSaveDialog({}, (data) => {
+FileHandler.showSaveDialog = (defaultPath, cb) => {
+    defaultPath = defaultPath || ''
+    return dialog.showSaveDialog({
+        defaultPath
+    }, (data) => {
         return cb(data)
     })
 }

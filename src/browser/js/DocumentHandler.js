@@ -65,22 +65,7 @@ DocumentHandler.loadFile = function(filename) {
 
     document.querySelector("trix-editor").value = initialContents
 
-    let previewContents = $(fileContents.contents).text().slice(0, 100)
-
-    $('.sidebar-item').removeClass('active')
-    if (openFiles.indexOf(filename) === -1) {
-        $('.sidebar-no-files').remove()
-        $('.sidebar').append(`
-        <div class="sidebar-item active" data-filename="${filename}">
-            <h1 class="sidebar-item-title">${fileContents.title}</h1>
-            <p class="sidebar-item-body">${previewContents}</p>
-        </div>
-        `)
-        openFiles.push(filename)
-    } else {
-        $(`[data-filename="${filename}"`).addClass('active')
-    }
-
+    DocumentHandler.createSidebarItem(currentFilename, fileContents.title, fileContents.contents)
     DirtyStatus.isClean()
 }
 
@@ -103,7 +88,7 @@ DocumentHandler.save = function() {
     }
 
     console.log('Opening save dialog...')
-    FileHandler.showSaveDialog(function(filename) {
+    FileHandler.showSaveDialog(title + '.trix', function(filename) {
         console.log('File name received:', filename)
         if (!filename) {
             console.log('Canceling save...')
@@ -112,9 +97,28 @@ DocumentHandler.save = function() {
 
         currentFilename = filename
         FileHandler.saveFile(currentFilename, fileContents)
+        DocumentHandler.createSidebarItem(currentFilename, title, contents)
 
         DirtyStatus.isClean()
     })
+}
+
+DocumentHandler.createSidebarItem = function(filename, title, contents) {
+    let previewContents = contents.replace(/(<([^>]+)>)/ig, ' ').slice(0, 100)
+
+    $('.sidebar-item').removeClass('active')
+    if (openFiles.indexOf(filename) === -1) {
+        $('.sidebar-no-files').remove()
+        $('.sidebar').append(`
+        <div class="sidebar-item active" data-filename="${filename}">
+            <h1 class="sidebar-item-title">${title}</h1>
+            <p class="sidebar-item-body">${previewContents}</p>
+        </div>
+        `)
+        openFiles.push(filename)
+    } else {
+        $(`[data-filename="${filename}"`).addClass('active')
+    }
 }
 
 module.exports = DocumentHandler

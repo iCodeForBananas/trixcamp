@@ -9,7 +9,7 @@ body, html {
 }
 
 article {
-    margin-left: 320px;
+    margin-left: 240px;
 }
 
 .trix-editor-container {
@@ -35,8 +35,9 @@ trix-toolbar {
     border-top: 1px solid rgb(229, 229, 229);
     border-bottom: 1px solid rgb(229, 229, 229);
     height: 38px;
-    margin: 0 -6rem;
-    padding: 0 6rem;
+    min-width: 395px;
+    margin: 0 -20px;
+    padding: 0 15px;
     z-index: 1;
 
     & .button_groups .button_group button,
@@ -48,8 +49,8 @@ trix-toolbar {
         border-right: 1px solid rgb(229, 229, 229);
     }
 
-    & .button_groups .button_group.block_tools {
-        border-right: 1px solid rgb(229, 229, 229);
+    & .button_groups .button_group.history_tools {
+        float: right;
     }
 
     & .button_groups .button_group {
@@ -95,5 +96,12 @@ trix-toolbar.sticky-trix-toolbar button_groups {
 trix-toolbar {
     background: white;
 }
+
+@media (max-width:727px){
+    .button_groups .button_group.history_tools {
+        display: none;
+    }
+}
+
 
 @import 'modules/sidebar';

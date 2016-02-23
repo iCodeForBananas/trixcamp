@@ -15,7 +15,8 @@ Mousetrap.bind('command+n', (e) => {
     $('.sidebar-item').removeClass('active')
     imageBlobs = {}
     document.getElementById('title-content').value = ''
-    document.querySelector("trix-editor").value = ''
+    document.querySelector('trix-editor').value = ''
+    $('#title-content').focus()
     isDirty = false
 })
 

@@ -6,7 +6,7 @@ let fs = require('fs'),
     DocumentHandler = require('./DocumentHandler')
 
 $(document).ready(function() {
-    $('#title-content').on('input', () => {
+    $('#title-content').on('keyup', () => {
         if (DocumentHandler.hasCurrentFile())
             DocumentHandler.delaySave()
 

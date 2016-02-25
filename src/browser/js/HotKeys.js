@@ -12,12 +12,15 @@ Mousetrap.bind('command+n', (e) => {
 
     DocumentHandler.setCurrentFilename(false)
     DocumentHandler.clearSavehandle()
-    $('.sidebar-item').removeClass('active')
+
     imageBlobs = {}
+
     document.getElementById('title-content').value = ''
     document.querySelector('trix-editor').value = ''
+    DirtyStatus.isClean()
+
+    $('.sidebar-item').removeClass('active')
     $('#title-content').focus()
-    isDirty = false
 })
 
 // Save File
@@ -29,7 +32,9 @@ Mousetrap.bind('command+s', (e) => {
 
 // Open file
 Mousetrap.bind('command+o', (e) => {
-    if (isDirty && !confirm("You are going to lose your unsaved work, is that ok?"))
+    let contents = document.getElementById('trix-content').value
+    let title = document.getElementById('title-content').value
+    if (isDirty && !confirm("You are going to lose your unsaved work, is that ok?") && contents.length === 0 && title.length === 0)
         return
 
     FileHandler.showOpenDialog((data) => {

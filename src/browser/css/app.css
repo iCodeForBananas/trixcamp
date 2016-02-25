@@ -5,10 +5,61 @@
 body, html {
   font-family: 'Helvetica Neue', helvetica, arial;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  width: 270px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 36px;
+  background: white;
+}
+.sidebar .sidebar-item:first-child {
+  border-top: 1px solid #e5e5e5;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  float: left;
+  clear: both;
+  border-bottom: 1px solid #e5e5e5;
+}
+.sidebar-item.active, .sidebar-item:hover {
+  background: rgba(221, 221, 221, 0.17);
+}
+
+.sidebar-item-title {
+  color: #444;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.sidebar-item-body {
+  color: #666;
+  font-size: 12px;
+  height: 40px;
+  overflow: hidden;
+  line-height: 18px;
+  margin: 0;
+}
+
+.sidebar-no-files {
+  font-size: 18px;
+  color: #ddd;
+  text-align: center;
+  padding: 60px 0;
+  font-weight: bold;
+  width: 100%;
 }
 
 article {
-  margin-left: 240px;
+  margin-left: 270px;
 }
 
 .trix-editor-container {
@@ -87,59 +138,15 @@ trix-toolbar.sticky-trix-toolbar button_groups {
 
 trix-toolbar {
   background: white;
+  min-width: 470px;
 }
 
-@media (max-width: 727px) {
-  .button_groups .button_group.history_tools {
+@media (max-width: 685px) {
+  .sidebar {
     display: none;
   }
-}
-.sidebar {
-  border-right: 1px solid #e5e5e5;
-  position: fixed;
-  width: 240px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding-top: 36px;
-  background: white;
-}
-.sidebar .sidebar-item:first-child {
-  border-top: 1px solid #e5e5e5;
-}
 
-.sidebar-item {
-  cursor: pointer;
-  padding: 20px;
-  width: 100%;
-  float: left;
-  clear: both;
-  border-bottom: 1px solid #e5e5e5;
-}
-.sidebar-item.active, .sidebar-item:hover {
-  background: rgba(221, 221, 221, 0.17);
-}
-
-.sidebar-item-title {
-  color: #444;
-  font-size: 14px;
-  margin: 0 0 4px;
-}
-
-.sidebar-item-body {
-  color: #666;
-  font-size: 12px;
-  height: 40px;
-  overflow: hidden;
-  line-height: 18px;
-  margin: 0;
-}
-
-.sidebar-no-files {
-  font-size: 18px;
-  color: #ddd;
-  text-align: center;
-  padding: 60px 0;
-  font-weight: bold;
-  width: 100%;
+  article {
+    margin-left: 0;
+  }
 }

@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/michaeljcalkins/trixcamp.png?label=ready&title=Ready)](https://waffle.io/michaeljcalkins/trixcamp)
 # TrixCamp
 Simple, distraction free writing app based on [Basecamp's trix-editor](https://github.com/basecamp/trix).
 
